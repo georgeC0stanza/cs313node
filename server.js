@@ -23,25 +23,15 @@ function handleRoot(request, response) {
     response.send();
 }
 
-function handleHome(request, response) {
-    var name = getCurrentLoggedInUserAccount();
-    console.log("Received a request for home");
-    // find the username
-    const username = "sburton";
-    const email = "burtons@byui.edu";
-    const params = {user: username, email: email};
-    response.render("homepage", params);
-}
 
 function handleMail(request, response) {
     console.log("Received a request for mail");
-
 
     var type = request.query.mail_type;
     var weight = request.query.mail_weight;
     var rate = calculateRate(type, weight);
     console.log("here3");
-    response.render("mail", rate);
+    response.render("mail", {rate: rate});
 }
 
 function calculateRate(type, weight){
@@ -86,3 +76,12 @@ function calculateRate(type, weight){
     return price;
 }
 
+function handleHome(request, response) {
+    var name = getCurrentLoggedInUserAccount();
+    console.log("Received a request for home");
+    // find the username
+    const username = "sburton";
+    const email = "burtons@byui.edu";
+    const params = {user: username, email: email};
+    response.render("homepage", params);
+}
