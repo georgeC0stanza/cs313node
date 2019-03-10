@@ -15,7 +15,7 @@ app.listen(PORT, function() {
 
 app.get("/", handleRoot);
 app.get("/home", handleHome);
-app.get("/mail", handleMail);
+app.get("/mail_price", handleMail);
 
 function handleRoot(request, response) {
     console.log("Receive a request for the root...");
