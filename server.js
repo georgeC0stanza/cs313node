@@ -37,8 +37,8 @@ function handleMail(request, response) {
     console.log("Received a request for mail");
 
 
-    type = request.query.mail_type;
-    weight = request.query.mail_weight;
+    var type = request.query.mail_type;
+    var weight = request.query.mail_weight;
     var rate = calculateRate(type, weight);
 
     response.render("mail", rate);
