@@ -7,7 +7,7 @@ var app = express();
 app.use(express.static("public"));
 
 app.set("views", "views");
-app.set("view engine", "/ejs");
+app.set("view engine", "ejs");
 
 app.listen(PORT, function() {
 	console.log("The server is up and listening on port 5000");
@@ -40,7 +40,7 @@ function handleMail(request, response) {
     var type = request.query.mail_type;
     var weight = request.query.mail_weight;
     var rate = calculateRate(type, weight);
-
+    console.log("here1");
     response.render("mail", rate);
 }
 
@@ -64,6 +64,7 @@ function calculateRate(type, weight){
             price = 4.39;
         } else if (weight >= 0){
             price = 3.66;
+            console.log("here1");
         } else {
             price = "weight cannot be negative.";
         }
@@ -81,7 +82,7 @@ function calculateRate(type, weight){
             price += 0.05;
         }
     }
-    
+    console.log("here2");
     return price;
 }
 
