@@ -26,7 +26,7 @@ app.get("/home", function(req, res) {
 	res.render("home", params);
 });
 
-app.listen(5000, function() {
+app.listen(process.env.PORT, function() {
 	console.log("The server is up and listening on port 5000");
 });
 
