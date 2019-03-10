@@ -7,7 +7,7 @@ var app = express();
 app.use(express.static("public"));
 
 app.set("views", "views");
-app.set("view engine", "ejs");
+app.set("view engine", "/ejs");
 
 app.listen(PORT, function() {
 	console.log("The server is up and listening on port 5000");
