@@ -31,7 +31,7 @@ function handleMail(request, response) {
     var weight = request.query.mail_weight;
     var rate = calculateRate(type, weight);
     console.log("here3");
-    response.render("mail", {rate: rate});
+    response.render("mail_price", rate);
 }
 
 function calculateRate(type, weight){
