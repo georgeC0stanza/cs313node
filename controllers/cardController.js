@@ -1,9 +1,9 @@
 // Controllers.js
 const model = require("../models/cardModel.js");
 
-function getScriptures(request, response) {
+function getCards(request, response) {
 
-    model.getAllScriptures(function(err, scriptures) {
+    model.getAllCards(function(err, scriptures) {
         if (err) {
             const data = {
                 success: false,
@@ -23,10 +23,10 @@ function getScriptures(request, response) {
 
 }
 
-function searchScriptures(request, response) {
+function searchCards(request, response) {
 
     const book = request.query.book;
-    model.getScripturesForBook(book, function(err, scriptures) {
+    model.getCardsForBook(book, function(err, scriptures) {
         if (err) {
             response.status(500).json({success: false});
         } else {
@@ -38,22 +38,22 @@ function searchScriptures(request, response) {
     });
 }
 
-function createScripture(request, response) {
+function createCard(request, response) {
     const book = request.body.book;
     const chapter = request.body.chapter;
     const verse = request.body.verse;
 
-    model.createScripture(book, chapter, verse, function(err, newScripture) {
+    model.createCard(book, chapter, verse, function(err, newCard) {
         if (err) {
 
         } else {
-            response.json(newScripture);
+            response.json(newCard);
 
         }
     });
 }
 
 module.exports = {
-    getScriptures: getScriptures,
-    searchScriptures: searchScriptures
+    getCards: getCards,
+    searchCards: searchCards
 };

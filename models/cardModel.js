@@ -2,7 +2,7 @@
 // const conn = "something";
 // pool = Pool({connectionString: conn});
 
-function getAllScriptures(callback) {
+function getAllCards(callback) {
     // const badThings = false; // just pretending...
     // if (badThings == true) {
     //     err = "Error in getting the scriptures"
@@ -28,7 +28,7 @@ function getAllScriptures(callback) {
 
 }
 
-function getScripturesForBook(book, callback) {
+function getCardsForBook(book, callback) {
     const scriptures = [
         {id: 1, book: book, chapter: 5, verse: 12},
         {id: 2, book: book, chapter: 13, verse: 14},
@@ -38,13 +38,13 @@ function getScripturesForBook(book, callback) {
     callback(null, scriptures);
 }
 
-function createScripture(book, chapter, verse, callback) {
-    const theNewScriptureFromTheDb = "";
-    callback(err, theNewScriptureFromTheDb);
+function createCard(book, chapter, verse, callback) {
+    const theNewCardFromTheDb = "";
+    callback(err, theNewCardFromTheDb);
 }
 
 module.exports = {
-    getAllScriptures: getAllScriptures,
-    getScripturesForBook: getScripturesForBook,
-    createScripture: createScripture
+    getAllCards: getAllCards,
+    getCardsForBook: getCardsForBook,
+    createCard: createCard
 };
