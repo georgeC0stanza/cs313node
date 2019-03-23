@@ -3,7 +3,7 @@ const model = require("../models/cardModel.js");
 
 function getCards(request, response) {
 
-    model.getAllCards(function(err, scriptures) {
+    model.getAllCards(function(err, cards) {
         if (err) {
             const data = {
                 success: false,
@@ -14,7 +14,7 @@ function getCards(request, response) {
         } else {
             const data = {
                 success: true,
-                scriptures: scriptures
+                cards: cards
             };
     
             response.json(data);    
@@ -26,13 +26,13 @@ function getCards(request, response) {
 function searchCards(request, response) {
 
     const book = request.query.book;
-    model.getCardsForBook(book, function(err, scriptures) {
+    model.getCardsForBook(book, function(err, cards) {
         if (err) {
             response.status(500).json({success: false});
         } else {
             response.json({
                 success:true,
-                scriptures: scriptures
+                cards: cards
             });
         }
     });
