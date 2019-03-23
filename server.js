@@ -3,6 +3,9 @@ var express = require("express");
 const path = require('path')
 const PORT = process.env.PORT || 5000
 
+const controller = require("./controllers/cardController.js");
+
+
 var app = express();
 app.use(express.static("public"));
 
@@ -12,6 +15,12 @@ app.set("view engine", "ejs");
 app.listen(PORT, function() {
 	console.log("The server is up and listening on port 5000");
 });
+
+
+
+app.get("/cards", controller.getCards);
+app.get("/login", controller.getLogin);
+
 
 app.get("/", handleRoot);
 app.get("/home", handleHome);
