@@ -1,5 +1,5 @@
 // Controllers.js
-const model = require("../models/scriptureModel.js");
+const model = require("../models/cardModel.js");
 
 function getScriptures(request, response) {
 
