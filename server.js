@@ -19,7 +19,7 @@ app.listen(PORT, function() {
 
 
 app.get("/cards", controller.getCards);
-app.get("/login", controller.getLogin);
+//app.get("/login", controller.getLogin);
 
 
 app.get("/", handleRoot);
