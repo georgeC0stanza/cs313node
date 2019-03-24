@@ -136,7 +136,7 @@ const baseURL = "/cards";
        obj['Search'].forEach(function (movie) {
          var item = document.createElement("li");
          var form = `<form action="" method="get">
-           <input type="button" onclick="viewDetails('${movie['imdbID']}')" value="view details">
+           <input type="button" onclick="viewDetails('${movie['cards']}')" value="view details">
          </form>`
          item.innerHTML = movie["Title"] + form;
          list.appendChild(item);
