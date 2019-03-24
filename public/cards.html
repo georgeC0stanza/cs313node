@@ -4,12 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="script.js"></script>
     <title>Cards</title>
 </head>
 <body>
-    <h1>Your Cards</h1>
+    <header>
+        <div class="header">
+          <h1>Your Cards</h1>
+          <div class="headerSmall">
+          </div>
+        </div> 
+    </header>
 
-    
+    <form action="" method="get">
+        Search Movie <br>
+        <input type="text" name="input" id="input"><br>
+        <input type="button" onclick="search()" value="Search">
+      </form>
+      <ul id="results">
     
 </body>
 </html>
