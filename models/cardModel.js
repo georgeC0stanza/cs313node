@@ -4,48 +4,21 @@ const connectionString = process.env.DATABASE_URL || "postgres://dtkohxpfxoreeh:
 const pool = new Pool({connectionString: connectionString});
 
 function getAllCards(callback) {
-    console.log("Behllo:");
-    var sql = "SELECT * FROM person";
+    var sql = "SELECT * FROM cardset where id = 1 order by cardtext_front";
 
     pool.query(sql, function(err, result) {
         // If an error occurred...
         if (err) {
+            callback(err, null);
             console.log("Error in query: ")
             console.log(err);
         }
 
         // Log this to the console for debugging purposes.
+        callback(null, result.rows);
         console.log("Back from DB with result:");
         console.log(result.rows);
-
-
-});      
-
-
-
-    // const badThings = false; // just pretending...
-    // if (badThings == true) {
-    //     err = "Error in getting the cards"
-    //     callback(err, null);
-    // }
-
-    // pool.query("SELECT id, book, chapter, verse FROM card", function(err, result) {
-    //     if (err) {
-    //         callback(err, null);
-    //     } else {
-    //         callback(null, result.rows);
-    //     }
-    // });
-
-    const cards = [
-        {id: 1, book: "Helaman", chapter: 5, verse: 12},
-        {id: 2, book: "John", chapter: 13, verse: 14},
-        {id: 3, book: "Ether", chapter: 12, verse: 27}
-    ]
-
-    callback(null, cards);
-
-
+    });      
 }
 
 function getCardsForBook(book, callback) {
