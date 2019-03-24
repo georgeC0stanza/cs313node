@@ -4,7 +4,7 @@ const connectionString = process.env.DATABASE_URL || "postgres://dtkohxpfxoreeh:
 const pool = new Pool({connectionString: connectionString});
 
 function getAllCards(callback) {
-
+    console.log("Behllo:");
     var sql = "SELECT * FROM person";
 
     pool.query(sql, function(err, result) {
