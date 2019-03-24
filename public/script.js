@@ -133,12 +133,12 @@ const baseURL = "/cards";
        var list = document.getElementById("results");
        list.innerHTML = "";
  
-       obj['cards'].forEach(function (movie) {
+       obj['cards'].forEach(function (card) {
          var item = document.createElement("li");
          var form = `<form action="" method="get">
-           <input type="button" onclick="viewDetails('${movie['cardtext_front']}')" value="view details">
+           <input type="button" onclick="viewDetails('${card['cardtext_front']}')" value="${card['cardtext_front']}">
          </form>`
-         item.innerHTML = movie["Title"] + form;
+         item.innerHTML = card["Title"] + form;
          list.appendChild(item);
        });
      }
