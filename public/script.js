@@ -133,7 +133,7 @@ const baseURL = "/cards";
        var list = document.getElementById("results");
        list.innerHTML = "";
  
-       obj['Search'].forEach(function (movie) {
+       obj['cards'].forEach(function (movie) {
          var item = document.createElement("li");
          var form = `<form action="" method="get">
            <input type="button" onclick="viewDetails('${movie['cards']}')" value="view details">
