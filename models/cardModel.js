@@ -19,7 +19,7 @@ function getAllCards(callback) {
         console.log(result.rows);
 
 
-});     
+});      
 
 
 
