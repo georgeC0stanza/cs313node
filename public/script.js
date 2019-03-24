@@ -121,10 +121,9 @@ function addNewCard(){
  
 
 const baseURL = "/cards";
- function search() {
-   var input = document.getElementById('input').value;
-   var searchURL = baseURL + `&s=${input}`;
-   console.log(input);
+
+
+ function load() {
  
    var xhttp = new XMLHttpRequest();
    xhttp.onreadystatechange = function() {
@@ -147,6 +146,33 @@ const baseURL = "/cards";
    xhttp.send();
  
  }
+
+ function add() {
+  var input = document.getElementById('input').value;
+  var searchURL = baseURL + `&s=${input}`;
+  console.log(input);
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var obj = JSON.parse(this.responseText);
+      var list = document.getElementById("results");
+      list.innerHTML = "";
+
+      obj['cards'].forEach(function (card) {
+        var item = document.createElement("li");
+        var form = `<form action="" method="get">
+          <input type="button" onclick="viewDetails('${card['cardtext_front']}')" value="${card['cardtext_front']}">
+        </form>`
+        item.innerHTML = card["Title"] + form;
+        list.appendChild(item);
+      });
+    }
+  };
+  xhttp.open("GET", "/cards", true);
+  xhttp.send();
+
+}
  
  function viewDetails(id) {
    console.log(id);
