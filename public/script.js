@@ -133,12 +133,12 @@ const baseURL = "/cards";
        list.innerHTML = "";
  
        obj['cards'].forEach(function (card) {
-         var item = document.createElement("li");
+         //var item = document.createElement("li");
          var form = `<form action="" method="get">
            <input type="button" onclick="viewDetails('${card['cardtext_front']}')" value="${card['cardtext_front']}">
          </form>`
          item.innerHTML = card["Title"] + form;
-         list.appendChild(item);
+         //list.appendChild(item);
        });
      }
    };
