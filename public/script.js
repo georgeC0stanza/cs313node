@@ -177,10 +177,13 @@ const baseURL = "/cards";
  function viewDetails(id) {
    console.log(id);
    var xhttp = new XMLHttpRequest();
-   var searchURL = baseURL + `&i=${id}`;
+   var searchURL = baseURL + `&i="${id}"`;
    xhttp.onreadystatechange = function() {
      if (this.readyState == 4 && this.status == 200) {
        console.log(this.responseText);
+
+       
+
        /*var obj = JSON.parse(this.responseText);
        var list = document.getElementById("results");
        list.innerHTML = "";
