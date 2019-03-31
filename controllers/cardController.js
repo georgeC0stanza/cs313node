@@ -20,7 +20,6 @@ function getCards(request, response) {
             response.json(data);    
         }
     });
-
 }
 
 function searchCards(request, response) {
