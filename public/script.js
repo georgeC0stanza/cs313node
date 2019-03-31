@@ -164,7 +164,7 @@ const baseURL = "/cards";
         var form = `<form action="" method="get">
           <input type="button" onclick="viewDetails('${card['cardtext_front']}')" value="${card['cardtext_front']}">
         </form>`
-        item.innerHTML = card["Title"] + form;
+        form.innerHTML = card["Title"] + form;
         //list.appendChild(item);
       });
     }
