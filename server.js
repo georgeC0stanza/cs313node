@@ -18,7 +18,7 @@ app.listen(PORT, function() {
 
 
 
-app.get("/cards", controller.getCards);
+//app.get("/cards", controller.getCards);
 //app.get("/login", controller.getLogin);
 app.post("/cards", controller.getCards);
 
