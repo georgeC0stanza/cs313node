@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: Arial;
     background: purple repeating-radial-gradient(rgb(174, 87, 174), black 20px, rgb(174, 87, 174) 40px);
+    cursor:url("mouse.ico"), default;
 }
 
 h2 {

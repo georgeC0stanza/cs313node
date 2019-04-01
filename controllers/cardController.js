@@ -3,7 +3,8 @@ const model = require("../models/cardModel.js");
 
 function getCards(request, response) {
 
-    model.getAllCards(function(err, cards) {
+    const card = request.body.i;
+    model.getAllCards(card, function(err, cards) {
         if (err) {
             const data = {
                 success: false,
