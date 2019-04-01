@@ -145,7 +145,7 @@ const userID = 1;
        });
      }
    };
-   xhttp.open("GET", "/cards", true);
+   xhttp.open("POST", "/cards", true);
    xhttp.send();
  
  }
