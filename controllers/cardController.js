@@ -4,7 +4,7 @@ const model = require("../models/cardModel.js");
 function getCards(request, response) {
 
     const userid = request.body.id;
-    console.log(userid);
+    console.log("userid= ", userid);
     model.getAllCards(userid, function(err, cards) {
         if (err) {
             const data = {

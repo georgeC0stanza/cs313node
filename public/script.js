@@ -135,8 +135,8 @@ const userID = 1;
          var button = document.createElement("BUTTON");
          var span = document.createElement("SPAN");
 
-         button.setAttribute("onclick", "viewDetails('${card['id']}')");
-         button.setAttribute("value", "${card['cardtext_front']}");
+         button.setAttribute("onclick", `viewDetails('${card['id']}')`);
+         button.setAttribute("value", `${card['cardtext_front']}`);
          
          cards.appendChild(button);
 
@@ -145,7 +145,7 @@ const userID = 1;
        });
      }
    };
-   xhttp.open("POST", "/cards", true);
+   xhttp.open("POST", searchURL, true);
    xhttp.send();
  
  }
