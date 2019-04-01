@@ -4,8 +4,8 @@ const connectionString = process.env.DATABASE_URL || "postgres://dtkohxpfxoreeh:
 const pool = new Pool({connectionString: connectionString});
 
 //todo
-function getAllCards(id, callback) {
-    var sql = `SELECT * FROM cardset where id = ${id} order by cardtext_front`;
+function getAllCards(userid, callback) {
+    var sql = `SELECT * FROM cardset where user_id = ${userid} order by cardtext_front`;
 
     pool.query(sql, function(err, result) {
         // If an error occurred...
