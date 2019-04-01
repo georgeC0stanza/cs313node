@@ -20,11 +20,12 @@ app.listen(PORT, function() {
 
 app.get("/cards", controller.getCards);
 //app.get("/login", controller.getLogin);
-
+app.post("/cards", controller.getCards);
 
 app.get("/", handleRoot);
 app.get("/home", handleHome);
 app.get("/mail_price", handleMail);
+
 
 function handleRoot(request, response) {
     console.log("Receive a request for the root...");
