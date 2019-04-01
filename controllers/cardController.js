@@ -54,7 +54,38 @@ function createCard(request, response) {
     });
 }
 
+function login(request, response){
+    const username = request.body.username;
+    const userPassword = request.body.password;
+
+    databasePassword = model.getPassword(username);
+    if (userPassword == databasePassword) {
+        const params = {
+            success: true, sessionID: userid
+        };
+        response.json(params);
+    }
+    else {
+        response.json({success: false})
+    }
+
+    if (username == "admin" && userPassword == "password"){
+        if (!req.session.user) {
+            req.session.user = {
+                username: username
+            };
+        }
+    }
+}
+
+function logout(request, response){
+    const seesionID = request.body.sessionID;
+
+}
+
 module.exports = {
     getCards: getCards,
-    searchCards: searchCards
-};
+    searchCards: searchCards,
+    login: login,
+    logout: logout
+}; 

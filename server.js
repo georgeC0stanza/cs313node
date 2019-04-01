@@ -17,8 +17,8 @@ app.listen(PORT, function() {
 });
 
 app.get('/getServerTime', verifyLogin, getServerTime);
-app.post('/login',  login);
-app.post('/logout', logout);
+app.post('/login',  contorller.login);
+app.post('/logout', contorller.logout);
 
 app.post("/cards", controller.getCards);
 
