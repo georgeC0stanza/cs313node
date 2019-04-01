@@ -121,24 +121,27 @@ function addNewCard(){
  
 
 const baseURL = "/cards";
+const userID = 1;
 
 
- function load() {
- 
+ function getAllCards(){
+  var searchURL = baseURL + `&id=${userID}`;
    var xhttp = new XMLHttpRequest();
    xhttp.onreadystatechange = function() {
      if (this.readyState == 4 && this.status == 200) {
        var obj = JSON.parse(this.responseText);
-       var list = document.getElementById("results");
-       list.innerHTML = "";
- 
+       var cards = document.getElementById("cardlist");
        obj['cards'].forEach(function (card) {
-         //var item = document.createElement("li");
-         var form = `<form action="" method="get">
-           <input type="button" onclick="viewDetails('${card['cardtext_front']}')" value="${card['cardtext_front']}">
-         </form>`
-         item.innerHTML = card["Title"] + form;
-         //list.appendChild(item);
+         var button = document.createElement("BUTTON");
+         var span = document.createElement("SPAN");
+
+         button.setAttribute("onclick", "viewDetails('${card['id']}')");
+         button.setAttribute("value", "${card['cardtext_front']}");
+         
+         cards.appendChild(button);
+
+         span.setAttribute("class", card[id]);
+         cards.appendChild(span);
        });
      }
    };
