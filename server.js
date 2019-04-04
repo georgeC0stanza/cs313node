@@ -8,6 +8,8 @@ const controller = require("./controllers/cardController.js");
 
 var app = express();
 app.use(express.static("public"));
+app.use(express.urlencoded()); 
+
 
 app.set("views", "views");
 app.set("view engine", "ejs");

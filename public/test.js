@@ -15,7 +15,7 @@ function login() {
             alert("error logging in!");
         }
     };
-    xhttp.open("POST",  "/login", false);
+    xhttp.open("POST",  "/login", true);
     xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhttp.send("username=" + username + "&password=" + password);
 }
