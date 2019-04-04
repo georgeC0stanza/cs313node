@@ -1,21 +1,25 @@
 function login() {
-	var username = $("#username").val();
-	var password = $("#password").val();
+	var username = document.getElementById("username").value;
+	var password = document.getElementById("password").value;
 
-	var params = {
-		username: username,
-		password: password
-	};
-
-	$.post("/login", params, function(result) {
-		if (result && result.success) {
-			$("#status").text("Successfully logged in.");
-		} else {
-			$("#status").text("Error logging in.");
-		}
-	});
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState>3 && xhttp.status==200) { 
+            //alert("logged in!");
+            isreturn = true;
+        }
+        else if (xhttp.status >= 500) { 
+            alert("Sorry the provided credentials are incorrect.");
+        }
+        else if (xhttp.status >= 300) { 
+            alert("error logging in!");
+        }
+    };
+    xhttp.open("POST",  "/login", false);
+    xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhttp.send("username=" + username + "&password=" + password);
 }
-
+/*
 function logout() {
 	$.post("/logout", function(result) {
 		if (result && result.success) {
@@ -36,4 +40,4 @@ function getServerTime() {
 	}).fail(function(result) {
 		$("#status").text("Could not get server time.");
 	});
-}
+}*/
