@@ -120,7 +120,7 @@ function login(req, res) {
         res.json(params);
     } else {
         const params = {
-            success: false
+            success: true
         };
 
         res.json(params); 
