@@ -107,11 +107,11 @@ function login(req, res) {
     console.log(`password: ${password}`);
 
     if (username == "admin" && password == "password"){
-        if (!req.session.user) {
+       /* if (!req.session.user) {
             req.session.user = {
                 username: username
             };
-        }
+        }*/
 
         const params = {
             success: true
