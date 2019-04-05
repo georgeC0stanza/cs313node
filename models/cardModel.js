@@ -3,6 +3,26 @@
 const connectionString = process.env.DATABASE_URL || "postgres://dtkohxpfxoreeh:f3ab65d5f6057d7265c8017d71161b048403502ab8b2b8f0c96d1aecd9ba95b9@ec2-23-23-241-119.compute-1.amazonaws.com:5432/dfk26h47jatf77?ssl=true";
 const pool = new Pool({connectionString: connectionString});
 
+function getPassword(username, callback){
+
+    var sql = `SELECT passwrd FROM person where username = ${username}`;
+
+    pool.query(sql, function(err, result) {
+        // If an error occurred...
+        if (err) {
+            callback(err, null);
+            console.log("Error in query: ")
+            console.log(err);
+        }
+
+        // Log this to the console for debugging purposes.
+        callback(null, result.row);
+        console.log("Back from DB with result:");
+        console.log(result.row);
+    });      
+}
+
+
 //todo
 function getAllCards(userid, callback) {
     var sql = `SELECT * FROM cardset where user_id = ${userid} order by cardtext_front`;
@@ -58,7 +78,10 @@ function createCard(book, chapter, verse, callback) {
     callback(err, theNewCardFromTheDb);
 }
 
+
+
 module.exports = {
+    getPassword: getPassword,
     getCardBack: getCardBack,
     getAllCards: getAllCards,
     getCardsForBook: getCardsForBook,

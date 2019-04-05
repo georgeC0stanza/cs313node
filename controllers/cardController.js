@@ -58,24 +58,28 @@ function login(request, response){
     const username = request.body.username;
     const userPassword = request.body.password;
 
-    databasePassword = model.getPassword(username);
-    if (userPassword == databasePassword) {
-        const params = {
-            success: true, sessionID: userid
-        };
-        response.json(params);
-    }
-    else {
-        response.json({success: false})
-    }
-
-    if (username == "admin" && userPassword == "password"){
-        if (!req.session.user) {
-            req.session.user = {
-                username: username
+     model.getPassword(username, function(err, databasePassword) {
+        if (err) {
+            response.status(500).json({success: false});
+        } 
+        if (userPassword == databasePassword) {
+            const params = {
+                success: true, sessionID: userid
             };
+            response.json(params);
         }
-    }
+        else {
+            response.json({success: false})
+        }
+
+        if (username == "admin" && userPassword == "password"){
+            if (!req.session.user) {
+                req.session.user = {
+                    username: username
+                };
+            }
+        }
+    });
 }
 
 function logout(request, response){

@@ -5,8 +5,10 @@ function login() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState>3 && xhttp.status==200) { 
+            var data = JSON.parse(json);
+            if (data.success = true){                
             alert("logged in!");
-            isreturn = true;
+            }
         }
         else if (xhttp.status >= 500) { 
             alert("Sorry the provided credentials are incorrect.");
