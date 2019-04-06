@@ -59,6 +59,8 @@ function login(request, response){
     const userPassword = request.body.password;
     console.log("here1");
      model.getPassword(username, function(err, databasePassword) {
+         console.log("dataBase pass: ", databasePassword);
+         console.log("userpassword:  ", userPassword);
         if (err) {
             console.log("control fail");
             response.status(500).json({success: false});

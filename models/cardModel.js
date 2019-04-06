@@ -16,9 +16,9 @@ function getPassword(username, callback){
         }
         console.log("modelhere2");
         // Log this to the console for debugging purposes.
+        console.log("Back from DB with result:", result.row);
         callback(null, result.row);
-        console.log("Back from DB with result:");
-        console.log(result.row);
+
     });      
 }
 
