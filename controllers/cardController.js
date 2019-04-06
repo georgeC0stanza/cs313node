@@ -56,9 +56,9 @@ function createCard(request, response) {
 
 function login(request, response){
     const username = request.body.username;
-    const userPassword = request.body.password;
+    const password = request.body.password;
     console.log("here1");
-     model.getPassword(username, function(err, databasePassword) {
+     model.getPassword(username, password, function(err, databasePassword, userPassword) {
         if (err) {
             console.log("control fail");
             response.status(500).json({success: false});
