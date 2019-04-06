@@ -5,7 +5,7 @@ const pool = new Pool({connectionString: connectionString});
 
 function getPassword(username, userPassword, callback){
     console.log("modelhere1");
-    var sql = `SELECT passwrd FROM person WHERE username = "${username}"`;
+    var sql = `SELECT passwrd FROM person WHERE username = '${username}'`;
 
     pool.query(sql, function(err, userPassword, result) {
         // If an error occurred...
