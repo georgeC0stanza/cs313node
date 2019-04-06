@@ -85,7 +85,7 @@ function calculateRate(type, weight){
             price += 0.05;
         }
     }
-    console.log("here2");
+
     return price;
 }
 

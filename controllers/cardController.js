@@ -57,21 +57,25 @@ function createCard(request, response) {
 function login(request, response){
     const username = request.body.username;
     const userPassword = request.body.password;
-
+    console.log("here1");
      model.getPassword(username, function(err, databasePassword) {
         if (err) {
+            console.log("control fail");
             response.status(500).json({success: false});
+
         } 
-        if (userPassword == databasePassword) {
+        else if (userPassword == databasePassword) {
             const params = {
                 success: true, sessionID: userid
             };
+            console.log("control success");
             response.json(params);
         }
         else {
             response.json({success: false})
+            console.log("control fail2");
         }
-
+/*
         if (username == "admin" && userPassword == "password"){
             if (!req.session.user) {
                 req.session.user = {
@@ -79,6 +83,7 @@ function login(request, response){
                 };
             }
         }
+        */
     });
 }
 
