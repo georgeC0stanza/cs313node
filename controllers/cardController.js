@@ -68,10 +68,11 @@ function login(request, response){
             const params = {
                 success: true, sessionID: userid
             };
-            console.log("control success");
+            console.log("control success"); 
             response.json(params);
         }
-        else {
+        else { 
+        
             response.json({success: false})
             console.log("control fail2");
         }
