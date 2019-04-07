@@ -5,9 +5,7 @@ function login() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState>3 && xhttp.status==200) { 
-
             var data = JSON.parse(this.responseText);
-            console.log(data);
             if (data.success = true){                
             alert("logged in!");
             }
