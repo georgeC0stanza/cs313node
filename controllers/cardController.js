@@ -68,7 +68,7 @@ function login(request, response){
         } 
         else if (userPassword == databasePassword) {
             const params = {
-                success: true, sessionID: userid
+                success: true//, sessionID: userid
             };
             console.log("control success");
             response.json(params);

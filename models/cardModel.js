@@ -14,13 +14,8 @@ function getPassword(username, callback){
             console.log("Error in query: ")
             console.log(err);
         }
-        console.log("result", result);
-        console.log("herer we are");
         // Log this to the console for debugging purposes.
         password = result.rows;
-       
-        console.log("Back from DB with result:", password);
-        console.log("Back from DB with result:", password[0].passwrd);
         callback(null, password[0].passwrd);
 
     });      
