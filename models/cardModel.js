@@ -20,7 +20,7 @@ function getPassword(username, callback){
         password = result.rows;
        
         console.log("Back from DB with result:", password);
-        console.log("Back from DB with result:", password.passwrd);
+        console.log("Back from DB with result:", password[0].passwrd);
         callback(null, password.passwrd);
 
     });      
