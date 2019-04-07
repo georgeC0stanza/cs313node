@@ -56,7 +56,7 @@ function createCard(request, response) {
 
 function login(request, response){
     const username = request.body.username;
-    const userPassword = request.body.password;
+    let userPassword = request.body.password;
     console.log("here1");
      model.getPassword(username, function(err, databasePassword) {
          console.log("dataBase pass: ", databasePassword);
