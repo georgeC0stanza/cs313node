@@ -4,7 +4,7 @@ const connectionString = process.env.DATABASE_URL || "postgres://dtkohxpfxoreeh:
 const pool = new Pool({connectionString: connectionString});
 
 function getPassword(username, callback){
-    console.log("modelhere1");
+    console.log("username", username);
     var sql = `SELECT passwrd FROM person WHERE username = '${username}'`;
 
     pool.query(sql, function(err, result) {
@@ -14,7 +14,7 @@ function getPassword(username, callback){
             console.log("Error in query: ")
             console.log(err);
         }
-        console.log("modelhere2");
+        console.log("result");
         // Log this to the console for debugging purposes.
         console.log("Back from DB with result:", result.passwrd);
         callback(null, result.passwrd);
