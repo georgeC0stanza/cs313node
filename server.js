@@ -31,7 +31,7 @@ app.get('/getServerTime', verifyLogin, getServerTime);
 app.post('/login',  controller.login);
 app.post('/logout', controller.logout);
 
-app.post("/cards", controller.getCards);
+app.post("/cards", verifyLogin, controller.getCards);
 
 app.get("/", handleRoot);
 app.get("/home", handleHome);
@@ -187,3 +187,16 @@ function getServerTime(req, res) {
     res.json(params);
 }
  
+function verifyLogin(request, response, next) {
+	if (request.session.user) {
+		// They are logged in!
+
+		// pass things along to the next function
+		next();
+	} else {
+		// They are not logged in
+		// Send back an unauthorized status
+		var result = {success:false, message: "Access Denied"};
+		response.status(401).json(result);
+	}
+}
