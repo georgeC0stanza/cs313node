@@ -86,10 +86,10 @@
         "width": "5px",
         "height": "5px",
         "background": "#e6f1f7",
-        "box-shadow": "-1px 0px #6badd3, 0px -1px #6badd3, 1px 0px #3a92c5, 0px 1px #3a92c5",
+        "box-shadow": "-1px 0px #b925a6, 0px -1px #b925a6, 1px 0px #b925a6, 0px 1px #b925a6",
         "border-radius": "1px",
         "will-change": "transform"
-      };
+      }; 
   
       // Init, and set properties
       this.init = function(x, y) {

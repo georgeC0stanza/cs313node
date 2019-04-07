@@ -11,6 +11,15 @@ app.use(express.static("public"));
 app.use(express.urlencoded()); 
 
 
+var session = require('express-session');
+
+// set up sessions
+app.use(session({
+    secret: 'my-super-secret-secret!',
+    resave: false,
+    saveUninitialized: true
+  }))
+
 app.set("views", "views");
 app.set("view engine", "ejs");
 

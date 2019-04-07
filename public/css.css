@@ -1,7 +1,7 @@
 body { 
     margin: 0;
     font-family: Arial;
-    background: purple repeating-radial-gradient(rgb(174, 87, 174), black 20px, rgb(174, 87, 174) 40px);
+    background: purple repeating-radial-gradient(rgb(185, 33, 152), rgb(0, 179, 125) 50px, rgb(185, 33, 152) 100px);
     cursor:crosshair;
 }
 
@@ -95,7 +95,7 @@ img {
 }
 
 .button {
-    background-color: #4CAF50; /* Green */
+    background-color: rgb(35, 99, 129); /* Green */
     color: white;
     padding: 15px 32px;
     text-align: center;

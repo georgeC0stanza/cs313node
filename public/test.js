@@ -29,7 +29,7 @@ function logout() {
 		} else {
 			$("#status").text("Error logging out.");
 		}
-	});
+	}); 
 }
 
 function getServerTime() {
