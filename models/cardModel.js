@@ -16,8 +16,8 @@ function getPassword(username, callback){
         }
         console.log("result", result);
         // Log this to the console for debugging purposes.
-        console.log("Back from DB with result:", result.passwrd);
-        callback(null, result.passwrd);
+        console.log("Back from DB with result:", result.rows);
+        callback(null, result.rows);
 
     });      
 }
