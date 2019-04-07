@@ -189,3 +189,16 @@ td {
 h2 {
     border-bottom-style: solid;
 }
+
+
+.blinking{
+    animation:blinkingText 4.2s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #fff597;   }
+    40%{    color: #ba81fa;   }
+    50%{    color: transparent; }
+    80%{    color: #78f2fd;   }
+    100%{   color: #fff597;   }
+}
+
