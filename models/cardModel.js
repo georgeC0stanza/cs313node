@@ -16,7 +16,7 @@ function getPassword(username, callback){
         }
         console.log("result", result);
         // Log this to the console for debugging purposes.
-        password = JSON.parse(result.rows);
+        password = JSON.parse(result.rows[0].passwrd);
         console.log("Back from DB with result:", password.passwrd);
         console.log("Back from DB with result:", password);
         callback(null, password.passwrd);
