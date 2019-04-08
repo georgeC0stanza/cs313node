@@ -99,7 +99,7 @@
           y: (-.4 + (Math.random() * -1))
         };
         
-        this.position = {x: x - 0, y: y - 210};
+        this.position = {x: x - 0, y: y - 355};
   
         this.element = document.createElement('span');
         applyProperties(this.element, this.initialStyles);
