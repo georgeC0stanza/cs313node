@@ -165,6 +165,8 @@ function logRequest(req, res, next) {
 }
 
 function verifyLogin(req, res, next) {
+
+    console.log(req.session.user);
     if (!(typeof req.session.user == 'undefined'))
     {
         console.log("next();");
