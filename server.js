@@ -167,13 +167,14 @@ function logRequest(req, res, next) {
 function verifyLogin(req, res, next) {
     if (!(typeof req.session.user == 'undefined'))
     {
+        console.log("next();");
         next();
     } 
 
     const params = {
         error: 'cannot access this page'
     }; 
-
+    console.log("failed verifylogin");
     res.status(401);
     res.json(params);
 }
