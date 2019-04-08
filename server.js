@@ -11,10 +11,10 @@ var app = express();
 app.use(express.static("public"));
 app.use(express.urlencoded()); 
 
-app.configure(function(){
-    app.use(express.bodyParser());
-    app.use(app.router);
-  });
+app.use(express.bodyParser());
+app.use(app.router);
+
+
 var session = require('express-session');
 
 // set up sessions
