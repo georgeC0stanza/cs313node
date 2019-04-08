@@ -40,7 +40,7 @@ function searchCards(request, response) {
         }
     });
 }
-
+ 
 function createCard(request, response) {
     console.log(request.query);
     const cardtext_front = request.query.cardtext_front;
