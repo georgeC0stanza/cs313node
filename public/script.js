@@ -178,7 +178,7 @@ const userID = 1;
       });
     }
   };
-  xhttp.open("POST", "/add_card", true);
+  xhttp.open("GET", "/add_card", true);
   xhttp.send();
 
 }
