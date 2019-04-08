@@ -153,12 +153,8 @@ const userID = 1;
  function add() {
   var cardtext_front = document.getElementById('cardtext_front').value;
   var cardtext_back = document.getElementById('cardtext_back').value;
-  const searchJSON = {
-    "cardtext_front" : cardtext_front,
-    "cardtext_back" : cardtext_back
-  }
   var searchString = baseURL + `&cardtext_front=${cardtext_front}` + `&cardtext_back=${cardtext_back}`;
-  var searchURL = encodeURI(baseURL + searchJSON); 
+  var searchURL = encodeURI(searchString); 
   console.log(searchURL);
 
   var xhttp = new XMLHttpRequest();
