@@ -32,7 +32,7 @@ app.post('/login',  controller.login);
 app.post('/logout', controller.logout);
 
 app.post("/cards", verifyLogin, controller.getCards);
-app.post("/add_card", verifyLogin, controller.createCards);
+app.post("/add_card", verifyLogin, controller.createCard);
 
 app.get("/", handleRoot);
 app.get("/home", handleHome);
