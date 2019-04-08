@@ -12,7 +12,7 @@ var app = express();
 app.use(express.static("public"));
 app.use(express.urlencoded()); 
 
-app.use(express.bodyParser());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json())
 app.use(app.router);
 
