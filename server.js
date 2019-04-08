@@ -13,7 +13,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded()); 
 
 app.use(bodyParser.urlencoded({extended: true}));
-app.use ( bodyParser.json( { type: `*/*` } ));
+app.use ( bodyParser.json());
 
 var session = require('express-session');
 
@@ -35,8 +35,8 @@ app.get('/getServerTime', verifyLogin, getServerTime);
 app.post('/login',  controller.login);
 app.post('/logout', controller.logout);
 
-app.post("/cards", verifyLogin, controller.getCards);
-app.post("/add_card", verifyLogin, controller.createCard);
+app.post("/cards", controller.getCards);
+app.post("/add_card", controller.createCard);
 
 app.get("/", handleRoot);
 app.get("/home", handleHome);
