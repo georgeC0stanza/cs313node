@@ -14,8 +14,6 @@ app.use(express.urlencoded());
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json())
-app.use(app.router);
-
 
 var session = require('express-session');
 
