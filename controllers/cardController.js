@@ -43,7 +43,7 @@ function createCard(request, response) {
     const cardtext_front = request.body.cardtext_front;
     const cardtext_back = request.body.cardtext_back;
     const user = request.session.user;
-
+    console.log(user, "is our user");
     model.createCard(user, cardtext_front, cardtext_back, function(err, newCard) {
         if (err) {
 
@@ -86,5 +86,6 @@ module.exports = {
     getCards: getCards,
     searchCards: searchCards,
     login: login,
-    logout: logout
+    logout: logout,
+    createCard: createCard
 }; 

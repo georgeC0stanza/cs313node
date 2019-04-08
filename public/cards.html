@@ -28,9 +28,17 @@
     <br/>
 
     <form action="" method="get">
-        Your cards: <br>
-        <input type="text" name="input" id="input"><br>
-        <input type="button" onclick="add()" value="Add a new card">
+        Create a new flashcard! <br>
+        <input type="text" name="newCard" id="newCard"><br>
+        <input type="button" onclick="addNewCard()" value="Add a new card with no update.">
+
+<br/> stuff: <br/> <br/> 
+
+
+        Create a new flashcard! <br>
+        Front: <input type="text" name="cardtext_front" id="cardtext_front"><br>
+        Back: &nbsp<input type="text" name="cardtext_back" id="cardtext_back"><br>
+        <input type="button" onclick="add()" value="Add a new card with update">
 
         <br/>
         <br/>

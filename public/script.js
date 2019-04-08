@@ -151,9 +151,10 @@ const userID = 1;
  }
 
  function add() {
-  var input = document.getElementById('input').value;
-  var searchURL = baseURL + `&s=${input}`;
-  console.log(input);
+  var cardtext_front = document.getElementById('cardtext_front').value;
+  var cardtext_back = document.getElementById('cardtext_back').value;
+  var searchURL = baseURL + `&cardtext_front=${cardtext_front}` + `&cardtext_back=${cardtext_back}`;
+  console.log(searchURL);
 
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -172,7 +173,7 @@ const userID = 1;
       });
     }
   };
-  xhttp.open("GET", "/cards", true);
+  xhttp.open("GET", "/add_card", true);
   xhttp.send();
 
 }
