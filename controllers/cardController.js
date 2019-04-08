@@ -46,7 +46,7 @@ function createCard(request, response) {
     const cardtext_back = request.body.cardtext_back;
     //const user = request.session.user; // doesn't work
     const user = "dako";
-    console.log(user, "is our user");
+    console.log(user, "is our user", cardtext_back, cardtext_front);
     model.createCard(user, cardtext_front, cardtext_back, function(err, newCard) {
         if (err) {
 
