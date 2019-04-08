@@ -40,11 +40,11 @@ function searchCards(request, response) {
 }
 
 function createCard(request, response) {
-    const book = request.body.book;
-    const chapter = request.body.chapter;
-    const verse = request.body.verse;
+    const cardtext_front = request.body.cardtext_front;
+    const cardtext_back = request.body.cardtext_back;
+    const user = request.session.user;
 
-    model.createCard(book, chapter, verse, function(err, newCard) {
+    model.createCard(user, cardtext_front, cardtext_back, function(err, newCard) {
         if (err) {
 
         } else {

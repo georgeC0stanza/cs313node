@@ -14,11 +14,50 @@ function getPassword(username, callback){
             console.log("Error in query: ")
             console.log(err);
         }
-        // Log this to the console for debugging purposes.
         password = result.rows;
         callback(null, password[0].passwrd);
 
     });      
+}
+
+function createCard(username, cardtext_front, cardtext_back, callback) {
+    console.log('username: ', username, ' - ', cardtext_front, ', ', cardtext_back);
+    var sql = `SELECT userid FROM person WHERE username = '${username}'`;
+
+    pool.query(sql, function(err, result) {
+        // If an error occurred...
+        if (err) {
+            console.log("Error in query: ")
+            console.log(err);
+            callback(null);
+        }
+        // Log this to the console for debugging purposes.
+        //password = result.rows;
+        console.log(result.rows);
+        const user_id = result.rows[0].id;
+        console.log(user_id);
+        (() => {
+            console.log('user: ', result, ' - ', cardtext_front, ', ', cardtext_back);
+            var inner_sql = `insert into cardset (user_id, cardtext_front, cardtext_back)
+            values ( '${user_id}' , '${cardtext_front}', '${cardtext_back}' ); = '${username}'`;
+        
+            pool.query(inner_sql, function(error, result) {
+                // If an error occurred...
+                if (err) {
+                    callback(error, null);
+                    console.log("Error in query: ")
+                    console.log(error);
+                }
+                // Log this to the console for debugging purposes.
+                //password = result.rows;
+                callback(null);
+        
+            }); 
+        })();
+
+    });      
+
+
 }
 
 
@@ -72,10 +111,6 @@ function getCardsForBook(book, callback) {
     callback(null, cards);
 }
 
-function createCard(book, chapter, verse, callback) {
-    const theNewCardFromTheDb = "";
-    callback(err, theNewCardFromTheDb);
-}
 
 
 
