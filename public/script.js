@@ -158,7 +158,7 @@ const userID = 1;
     "cardtext_back" : cardtext_back
   }
   var searchString = baseURL + `&cardtext_front=${cardtext_front}` + `&cardtext_back=${cardtext_back}`;
-  var searchURL = encodeURI(baseurl + searchJSON); 
+  var searchURL = encodeURI(baseURL + searchJSON); 
   console.log(searchURL);
 
   var xhttp = new XMLHttpRequest();
