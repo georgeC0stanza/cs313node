@@ -5,16 +5,16 @@ const PORT = process.env.PORT || 5000
 
 const controller = require("./controllers/cardController.js");
 
-app.configure(function(){
-    app.use(express.bodyParser());
-    app.use(app.router);
-  });
+
 
 var app = express();
 app.use(express.static("public"));
 app.use(express.urlencoded()); 
 
-
+app.configure(function(){
+    app.use(express.bodyParser());
+    app.use(app.router);
+  });
 var session = require('express-session');
 
 // set up sessions
