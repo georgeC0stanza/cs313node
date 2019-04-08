@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 5000
 
 const controller = require("./controllers/cardController.js");
 
+const bodyParser = require('body-parser')
 
 
 var app = express();
@@ -12,6 +13,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded()); 
 
 app.use(express.bodyParser());
+app.use(bodyParser.json())
 app.use(app.router);
 
 
