@@ -179,16 +179,8 @@ function verifyLogin(req, res, next) {
     res.json(params);
 }
 
-function getServerTime(req, res) {
 
-    const params = {
-        success: true,
-        time: new Date()
-    }; 
-
-    res.json(params);
-}
- 
+ /*
 function verifyLogin(request, response, next) {
 	if (request.session.user) {
 		// They are logged in!
@@ -201,4 +193,14 @@ function verifyLogin(request, response, next) {
 		var result = {success:false, message: "Access Denied"};
 		response.status(401).json(result);
 	}
+}
+*/
+function getServerTime(req, res) {
+
+    const params = {
+        success: true,
+        time: new Date()
+    }; 
+
+    res.json(params);
 }
