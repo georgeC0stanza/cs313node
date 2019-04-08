@@ -1,6 +1,8 @@
 // Controllers.js
 const model = require("../models/cardModel.js");
 
+var session = require('express-session');
+
 function getCards(request, response) {
 
     const userid = request.body.id;
