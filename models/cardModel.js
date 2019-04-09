@@ -39,7 +39,7 @@ function createCard(username, cardtext_front, cardtext_back, callback) {
         (() => {
             console.log('user: ', result, ' - ', cardtext_front, ', ', cardtext_back);
             var inner_sql = `insert into cardset (user_id, cardtext_front, cardtext_back)
-            values ( '${user_id}' , '${cardtext_front}', '${cardtext_back}' ); = '${username}'`;
+            values ( ${user_id} , '${cardtext_front}', '${cardtext_back}' ); = '${username}'`;
         
             pool.query(inner_sql, function(error, result) {
                 // If an error occurred...
