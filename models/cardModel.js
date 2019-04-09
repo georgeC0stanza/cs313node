@@ -84,7 +84,7 @@ function getAllCards(userid, callback) {
 
 //todo
 function getCardBack(id, callback) {
-    var sql = `SELECT * FROM cardset where id = 1 order by cardtext_front`;
+    var sql = `SELECT cardtext_back FROM cardset where id = ${id}`;
 
     pool.query(sql, function(err, result) {
         // If an error occurred...
