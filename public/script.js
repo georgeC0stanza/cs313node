@@ -197,7 +197,7 @@ function add() {
        var obj = JSON.parse(this.responseText);
 
        var back = document.getElementById(id);
-       back.setAttribute("value", toString(obj.cards[0]));
+       back.setAttribute("value", obj.cards.cardtext_back);
 
        /*
        var list = document.getElementById("results");
@@ -233,5 +233,5 @@ function add() {
 
  function hide(id){
   var back = document.getElementById(id);
-  back.setAttribute("value", " &nbsp &nbsp ");
+  back.setAttribute("value", "     ");
 }
