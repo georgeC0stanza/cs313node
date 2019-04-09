@@ -50,6 +50,7 @@ function createCard(username, cardtext_front, cardtext_back, callback) {
                 }
                 // Log this to the console for debugging purposes.
                 //password = result.rows;
+                console.log("this should have inserted: ", inner_sql);
                 callback(null);
         
             }); 
