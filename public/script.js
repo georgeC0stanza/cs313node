@@ -145,7 +145,7 @@ function getAllCards(){
     }
   };
   xhttp.open("POST","/cards", true);
-  xhttp.send(`&id=${userID}`);
+  xhttp.send(`id=${userID}`);
 }
  
 function add() {
