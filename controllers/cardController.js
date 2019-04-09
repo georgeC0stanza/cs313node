@@ -24,7 +24,7 @@ function getCards(request, response) {
             response.json(data);    
         }
     });
-}
+} 
 
 function getCardBack(request, response) {
     const userid = 2;
