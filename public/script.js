@@ -144,6 +144,8 @@ function getAllCards(){
         span.setAttribute("id", "back" + card['id']);
         span.setAttribute("onclick", `hide('back' + '${card['id']}')`);
         cards.appendChild(span);
+        cards.appendChild(document.createElement("br"));
+        cards.appendChild(document.createElement("br"));
       });
     }
   };
