@@ -154,11 +154,10 @@ const userID = 2;
   var cardtext_front = document.getElementById('cardtext_front').value;
   var cardtext_back = document.getElementById('cardtext_back').value;
 
-
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      var xhttp = new XMLHttpRequest();
+      /*var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           var obj = JSON.parse(this.responseText);
@@ -178,12 +177,12 @@ const userID = 2;
       xhttp.open("POST", "/cards", true);
       xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       xhttp.send( 'id=2');
-    }
+    }*/
+    getAllCards();
   };
   xhttp.open("POST", "/add_card", true);
   xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhttp.send( `&cardtext_front=${cardtext_front}` + `&cardtext_back=${cardtext_back}`);
-
 }
  
  function viewDetails(id) {
@@ -192,8 +191,20 @@ const userID = 2;
    xhttp.onreadystatechange = function() {
      if (this.readyState == 4 && this.status == 200) {
        console.log(this.responseText);
-
-       
+       var obj = JSON.parse(this.responseText);
+       /*
+       var list = document.getElementById("results");
+       list.innerHTML = "";
+ 
+       obj['cards'].forEach(function (card) {
+         var item = document.createElement("li");
+         var form = `<form action="" method="get">
+           <input type="button" onclick="viewDetails('${card['cardtext_front']}')" value="${card['cardtext_front']}">
+         </form>`
+         item.innerHTML = card["Title"] + form;
+         list.appendChild(item);
+       });
+       */
 
        /*var obj = JSON.parse(this.responseText);
        var list = document.getElementById("results");
