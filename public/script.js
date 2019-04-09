@@ -141,6 +141,7 @@ function getAllCards(){
 
         span.setAttribute("type", "button");
         span.setAttribute("id", "back" + card['id']);
+        button.setAttribute("onclick", `hide('back' + '${card['id']}')`);
         cards.appendChild(span);
       });
     }
@@ -196,7 +197,7 @@ function add() {
        var obj = JSON.parse(this.responseText);
 
        var back = document.getElementById(id);
-       back.setAttribute("value", toString(obj.cards[0].cardtext_back));
+       back.setAttribute("value", toString(obj.cards[0]));
 
        /*
        var list = document.getElementById("results");
@@ -229,3 +230,8 @@ function add() {
    xhttp.open("POST", "/cardBacks", true);
    xhttp.send(`i=${id}`);
  }
+
+ function hide(id){
+  var back = document.getElementById(id);
+  back.setAttribute("value", "      ");
+}
