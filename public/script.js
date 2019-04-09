@@ -132,14 +132,14 @@ function getAllCards(){
       var cards = document.getElementById("cardlist");
       obj['cards'].forEach(function (card) {
         var button = document.createElement("INPUT");
-        var span = document.createElement("SPAN");
+        var span = document.createElement("INPUT");
 
         button.setAttribute("type", "button");
         button.setAttribute("onclick", `viewDetails('back' + '${card['id']}')`);
         button.setAttribute("value", `${card['cardtext_front']}`);
-        
         cards.appendChild(button);
 
+        span.setAttribute("type", "button");
         span.setAttribute("id", "back" + card['id']);
         cards.appendChild(span);
       });
@@ -196,7 +196,7 @@ function add() {
        var obj = JSON.parse(this.responseText);
 
        var back = document.getElementById(id);
-       back.innerText = toString(obj.cards);
+       back.innerText = toString(obj.cards[0].cardtext_back);
 
        /*
        var list = document.getElementById("results");
