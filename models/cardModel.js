@@ -22,7 +22,7 @@ function getPassword(username, callback){
 
 function createCard(username, cardtext_front, cardtext_back, callback) {
     console.log('username: ', username, ' - ', cardtext_front, ', ', cardtext_back);
-    var sql = `SELECT userid FROM person WHERE username = '${username}'`;
+    var sql = `SELECT id FROM person WHERE username = '${username}'`;
 
     pool.query(sql, function(err, result) {
         // If an error occurred...
