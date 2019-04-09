@@ -83,8 +83,8 @@ function getAllCards(userid, callback) {
 
 
 //todo
-function getCardBack(id, cardid, callback) {
-    var sql = `SELECT cardtext_back FROM cardset WHERE id = ${id} AND cardid = ${cardid}`;
+function getCardBack(userid, cardid, callback) {
+    var sql = `SELECT cardtext_back FROM cardset WHERE user_id = ${userid} AND id = ${cardid}`;
 
     pool.query(sql, function(err, result) {
         // If an error occurred...
