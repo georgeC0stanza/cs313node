@@ -1,8 +1,13 @@
 // Controllers.js
 const model = require("../models/cardModel.js");
 
+// never got this to work properly
 var session = require('express-session');
 
+
+/******************************************************
+ * gets all stored flashcards for a user and send it back to the client
+ */
 function getCards(request, response) {
 
     const userid = request.body.id;
@@ -26,6 +31,9 @@ function getCards(request, response) {
     });
 } 
 
+/******************************************************
+ * gets the back of a stored flashcard for a user and send it back to the client
+ */
 function getCardBack(request, response) {
     const userid = 2;
     const cardid = request.body.i;
@@ -49,21 +57,6 @@ function getCardBack(request, response) {
     });
 }
 
-function searchCards(request, response) {
-
-    const book = request.query.book;
-    model.getCardsForBook(book, function(err, cards) {
-        if (err) {
-            response.status(500).json({success: false});
-        } else {
-            response.json({
-                success:true,
-                cards: cards
-            });
-        }
-    });
-}
- 
 function createCard(request, response) {
     console.log(request.body);
     const cardtext_front = request.body.cardtext_front;
@@ -104,16 +97,10 @@ function login(request, response){
     });
 }
 
-function logout(request, response){
-    const seesionID = request.body.sessionID;
-
-}
 
 module.exports = {
     getCards: getCards,
-    searchCards: searchCards,
     login: login,
-    logout: logout,
     createCard: createCard,
     getCardBack: getCardBack
 }; 

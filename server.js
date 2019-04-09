@@ -31,9 +31,7 @@ app.listen(PORT, function() {
 	console.log("The server is up and listening on port 5000");
 });
 
-app.get('/getServerTime', verifyLogin, getServerTime);
 app.post('/login',  controller.login);
-app.post('/logout', controller.logout);
 
 app.post("/cards", controller.getCards);
 app.post("/cardBacks", controller.getCardBack);
@@ -114,54 +112,6 @@ function handleHome(request, response) {
     response.render("homepage", params);
 }
 
-function login(req, res) {
-    const username = req.body.username;
-    const password = req.body.password;
-
-    console.log(`username: ${username}`);
-    console.log(`password: ${password}`);
-
-    if (username == "admin" && password == "password"){
-       /* if (!req.session.user) {
-            req.session.user = {
-                username: username
-            };
-        }*/
-
-        const params = {
-            success: true
-        }; 
-
-        res.json(params);
-    } else {
-        const params = {
-            success: false
-        };
-
-        res.json(params); 
-    }
-}
-
-function logout(req, res) {
-    if (typeof req.session.user == 'undefined') {
-        req.session.user = undefined;
-
-        const params = {
-            success: false
-        }; 
-    
-        res.json(params);
-    } else {
-        req.session.destroy();
-
-        const params = {
-            success: true
-        }; 
-
-        res.json(params);
-    }
-}
-
 
 function logRequest(req, res, next) {
     console.log("Received a request for: " + req.url);
@@ -204,12 +154,3 @@ function verifyLogin(request, response, next) {
 	}
 }
 */
-function getServerTime(req, res) {
-
-    const params = {
-        success: true,
-        time: new Date()
-    }; 
-
-    res.json(params);
-}
