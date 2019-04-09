@@ -145,6 +145,7 @@ function getAllCards(){
     }
   };
   xhttp.open("POST","/cards", true);
+  xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhttp.send(`id=${userID}`);
 }
  
@@ -180,7 +181,7 @@ function add() {
     }
   };
   xhttp.open("POST", "/add_card", true);
-  xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  
   xhttp.send( `&cardtext_front=${cardtext_front}` + `&cardtext_back=${cardtext_back}`);
 
 }
