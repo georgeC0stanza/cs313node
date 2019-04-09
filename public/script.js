@@ -174,7 +174,7 @@ const userID = 1;
       });
     }
   };
-  xhttp.open("GET", "/add_card", true);
+  xhttp.open("GET", searchURL, true);
   xhttp.send();
 
 }
