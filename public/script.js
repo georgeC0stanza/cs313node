@@ -184,7 +184,7 @@ function add() {
     }
   };
   xhttp.open("POST", "/add_card", true);
-  
+  xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhttp.send( `&cardtext_front=${cardtext_front}` + `&cardtext_back=${cardtext_back}`);
 
 }
@@ -231,8 +231,8 @@ function add() {
      }
    };
    xhttp.open("POST", "/cardBacks", true);
-   //xhttp.send(`i=${card_id}`);
-   xhttp.send(`i=4`);
+   xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+   xhttp.send(`i=${card_id}`);
  }
 
  function hide(id){

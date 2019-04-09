@@ -40,7 +40,7 @@ function getCardBack(request, response) {
             response.status(500).json(data);
         } else {
             const data = {
-                success: true, 
+                success: true,
                 cards: cards
             };
     
