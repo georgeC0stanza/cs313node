@@ -123,8 +123,12 @@ img {
 }
 
 img {
-    float: right;
+    position:relative;
+    left:25%;
   }
+.float {
+    float: right;
+}
 
 table {
     border: 3px solid darkblue;
