@@ -26,6 +26,29 @@ function getCards(request, response) {
     });
 }
 
+function getCardBack(request, response) {
+    const userid = 2;
+    const cardtext_front = request.body.i;
+    console.log("userid= ", userid, "cardtet", cardtext_front);
+    model.getCardBack(userid, function(err, cards) {
+        if (err) {
+            const data = {
+                success: false,
+                message: err
+            };
+
+            response.status(500).json(data);
+        } else {
+            const data = {
+                success: true,
+                cards: cards
+            };
+    
+            response.json(data);    
+        }
+    });
+}
+
 function searchCards(request, response) {
 
     const book = request.query.book;
@@ -91,5 +114,6 @@ module.exports = {
     searchCards: searchCards,
     login: login,
     logout: logout,
-    createCard: createCard
+    createCard: createCard,
+    getCardBack: getCardBack
 }; 

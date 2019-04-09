@@ -189,7 +189,7 @@ const userID = 2;
  function viewDetails(id) {
    console.log(id);
    var xhttp = new XMLHttpRequest();
-   var searchURL = "/cards" + `&i="${id}"`;
+   var searchURL = "/cardBacks" + `&i="${id}"`;
    xhttp.onreadystatechange = function() {
      if (this.readyState == 4 && this.status == 200) {
        console.log(this.responseText);
