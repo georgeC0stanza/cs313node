@@ -42,9 +42,9 @@ function searchCards(request, response) {
 }
  
 function createCard(request, response) {
-    console.log(request.query);
-    const cardtext_front = request.query.cardtext_front;
-    const cardtext_back = request.query.cardtext_back;
+    console.log(request.body);
+    const cardtext_front = request.body.cardtext_front;
+    const cardtext_back = request.body.cardtext_back;
     //const user = request.session.user; // doesn't work
     const user = "dako";
     console.log(user, "is our user", cardtext_back, cardtext_front);
