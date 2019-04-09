@@ -131,6 +131,8 @@ function getAllCards(){
       var obj = JSON.parse(this.responseText);
       console.log(this.responseText);
       var cards = document.getElementById("cardlist");
+      cards.innerHTML = "";
+
       obj['cards'].forEach(function (card) {
         var button = document.createElement("INPUT");
         var span = document.createElement("INPUT");
