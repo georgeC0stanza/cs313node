@@ -121,11 +121,11 @@ function addNewCard(){
  
 
 const baseURL = "/cards";
-const userID = 1;
+const userID = 2;
 
 
  function getAllCards(){
-  var searchURL = baseURL + `&id=${userID}`;
+  var searchURL = "/cards" + `&id=${userID}`;
    var xhttp = new XMLHttpRequest();
    xhttp.onreadystatechange = function() {
      if (this.readyState == 4 && this.status == 200) {
@@ -189,7 +189,7 @@ const userID = 1;
  function viewDetails(id) {
    console.log(id);
    var xhttp = new XMLHttpRequest();
-   var searchURL = baseURL + `&i="${id}"`;
+   var searchURL = "/cards" + `&i="${id}"`;
    xhttp.onreadystatechange = function() {
      if (this.readyState == 4 && this.status == 200) {
        console.log(this.responseText);
