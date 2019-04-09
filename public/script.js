@@ -196,7 +196,7 @@ function add() {
        var obj = JSON.parse(this.responseText);
 
        var back = document.getElementById(id);
-       back.innerText = obj.cards.cardtext_back;
+       back.innerText = obj.cards;
 
        /*
        var list = document.getElementById("results");
