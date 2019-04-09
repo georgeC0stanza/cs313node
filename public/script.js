@@ -195,7 +195,7 @@ function add() {
      if (this.readyState == 4 && this.status == 200) {
        console.log(this.responseText);
        var obj = JSON.parse(this.responseText);
-       console.log(obj.cards[0]);
+       console.log(obj.cards[0].cardtext_back);
 
        document.getElementById(id).setAttribute("value", obj.cards[0]);
 
