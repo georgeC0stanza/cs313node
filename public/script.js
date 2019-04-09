@@ -139,7 +139,7 @@ function getAllCards(){
         
         cards.appendChild(button);
 
-        span.setAttribute("class", card[id]);
+        span.setAttribute("class", card['id']);
         cards.appendChild(span);
       });
     }
