@@ -55,7 +55,7 @@ function createCard(request, response) {
             response.json(newCard);
 
         }
-    });
+    }); 
 }
 
 function login(request, response){
