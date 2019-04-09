@@ -190,6 +190,10 @@ h2 {
     border-bottom-style: solid;
 }
 
+.small {
+    font-size: small;
+}
+
 
 .blinking{
     animation:blinkingText 4.2s infinite;
