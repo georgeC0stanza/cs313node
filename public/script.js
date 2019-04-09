@@ -210,5 +210,5 @@ const userID = 2;
      }
    };
    xhttp.open("POST", "/cardBacks", true);
-   xhttp.send(i=${id});
+   xhttp.send(`i=${id}`);
  }
