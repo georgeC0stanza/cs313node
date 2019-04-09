@@ -136,7 +136,7 @@ function getAllCards(){
         var span = document.createElement("INPUT");
 
         button.setAttribute("type", "button");
-        button.setAttribute("onclick", `viewDetails('back' + '${card['id']}')`);
+        button.setAttribute("onclick", `viewDetails('${card['id']}')`);
         button.setAttribute("value", `${card['cardtext_front']}`);
         cards.appendChild(button);
 
@@ -198,7 +198,7 @@ function add() {
        var obj = JSON.parse(this.responseText);
        console.log(obj.cards[0].cardtext_back);
 
-       document.getElementById(id).setAttribute("value", obj.cards[0].cardtext_back);
+       document.getElementById("back" + id).setAttribute("value", obj.cards[0].cardtext_back);
 
        /*
        var list = document.getElementById("results");
