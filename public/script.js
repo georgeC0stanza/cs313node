@@ -135,12 +135,12 @@ function getAllCards(){
         var span = document.createElement("SPAN");
 
         button.setAttribute("type", "button");
-        button.setAttribute("onclick", `viewDetails('${card['id']}')`);
+        button.setAttribute("onclick", `viewDetails('back' + '${card['id']}')`);
         button.setAttribute("value", `${card['cardtext_front']}`);
         
         cards.appendChild(button);
 
-        span.setAttribute("class", card['id']);
+        span.setAttribute("class", "back" + card['id']);
         cards.appendChild(span);
       });
     }
@@ -194,6 +194,10 @@ function add() {
      if (this.readyState == 4 && this.status == 200) {
        console.log(this.responseText);
        var obj = JSON.parse(this.responseText);
+
+       var back = document.getElementById(id);
+       back.innerText = obj;
+
        /*
        var list = document.getElementById("results");
        list.innerHTML = "";
