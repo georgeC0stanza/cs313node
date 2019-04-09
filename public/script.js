@@ -231,7 +231,8 @@ function add() {
      }
    };
    xhttp.open("POST", "/cardBacks", true);
-   xhttp.send(`i=${card_id}`);
+   //xhttp.send(`i=${card_id}`);
+   xhttp.send(`i=4`);
  }
 
  function hide(id){
