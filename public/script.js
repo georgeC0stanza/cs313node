@@ -141,7 +141,7 @@ function getAllCards(){
 
         span.setAttribute("type", "button");
         span.setAttribute("id", "back" + card['id']);
-        button.setAttribute("onclick", `hide('back' + '${card['id']}')`);
+        span.setAttribute("onclick", `hide('back' + '${card['id']}')`);
         cards.appendChild(span);
       });
     }
