@@ -140,7 +140,7 @@ function getAllCards(){
         
         cards.appendChild(button);
 
-        span.setAttribute("class", "back" + card['id']);
+        span.setAttribute("id", "back" + card['id']);
         cards.appendChild(span);
       });
     }
