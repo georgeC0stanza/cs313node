@@ -158,18 +158,26 @@ const userID = 1;
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      var obj = JSON.parse(this.responseText);
-      var list = document.getElementById("results");
-      list.innerHTML = "";
-
-      obj['cards'].forEach(function (card) {
-        var item = document.createElement("li");
-        var form = `<form action="" method="get">
-          <input type="button" onclick="viewDetails('${card['cardtext_front']}')" value="${card['cardtext_front']}">
-        </form>`
-        item.innerHTML = card["Title"] + form;
-        list.appendChild(item);
-      });
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var obj = JSON.parse(this.responseText);
+          var list = document.getElementById("results");
+          list.innerHTML = "";
+    
+          obj['cards'].forEach(function (card) {
+            var item = document.createElement("li");
+            var form = `<form action="" method="get">
+              <input type="button" onclick="viewDetails('${card['cardtext_front']}')" value="${card['cardtext_front']}">
+            </form>`
+            item.innerHTML = card["Title"] + form;
+            list.appendChild(item);
+          });
+        }
+      };
+      xhttp.open("POST", "/cards", true);
+      xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhttp.send( 'id=2');
     }
   };
   xhttp.open("POST", "/add_card", true);
