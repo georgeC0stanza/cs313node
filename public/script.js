@@ -233,5 +233,5 @@ function add() {
 
  function hide(id){
   var back = document.getElementById(id);
-  back.setAttribute("value", "      ");
+  back.setAttribute("value", " &nbsp &nbsp ");
 }
