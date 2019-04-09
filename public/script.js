@@ -197,7 +197,7 @@ function add() {
        var obj = JSON.parse(this.responseText);
        console.log(obj.cards[0].cardtext_back);
 
-       document.getElementById(id).setAttribute("value", obj.cards[0]);
+       document.getElementById(id).setAttribute("value", obj.cards[0].cardtext_back);
 
        /*
        var list = document.getElementById("results");
