@@ -153,9 +153,7 @@ const userID = 1;
  function add() {
   var cardtext_front = document.getElementById('cardtext_front').value;
   var cardtext_back = document.getElementById('cardtext_back').value;
-  var searchString = baseURL + `?cardtext_front=${cardtext_front}&cardtext_back=${cardtext_back}`;
-  var searchURL = encodeURI(searchString); 
-  console.log(searchURL);
+
 
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -174,8 +172,9 @@ const userID = 1;
       });
     }
   };
-  xhttp.open("GET", searchURL, true);
-  xhttp.send();
+  xhttp.open("POST", "/add_card", true);
+  xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhttp.send( `&cardtext_front=${cardtext_front}` + `&cardtext_back=${cardtext_back}`);
 
 }
  

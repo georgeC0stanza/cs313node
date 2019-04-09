@@ -35,8 +35,8 @@ app.get('/getServerTime', verifyLogin, getServerTime);
 app.post('/login',  controller.login);
 app.post('/logout', controller.logout);
 
-app.get("/cards", controller.getCards);
-app.get("/add_card", controller.createCard);
+app.post("/cards", controller.getCards);
+app.post("/add_card", controller.createCard);
 
 app.get("/", handleRoot);
 app.get("/home", handleHome);
