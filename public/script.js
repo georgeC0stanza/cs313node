@@ -141,6 +141,8 @@ function getAllCards(){
         button.setAttribute("class", "card_button");
         cards.appendChild(button);
 
+        cards.appendChild( document.createTextNode( '\u00A0' ) );
+
         span.setAttribute("type", "button");
         span.setAttribute("id", "back" + card['id']);
         span.setAttribute("onclick", `hide('back' + '${card['id']}')`);
