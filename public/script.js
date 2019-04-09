@@ -189,8 +189,8 @@ function add() {
 
 }
  
- function viewDetails(id) {
-   console.log(id);
+ function viewDetails(card_id) {
+   console.log(card_id);
    var xhttp = new XMLHttpRequest();
    xhttp.onreadystatechange = function() {
      if (this.readyState == 4 && this.status == 200) {
@@ -198,8 +198,8 @@ function add() {
        var obj = JSON.parse(this.responseText);
        console.log(obj.cards[0].cardtext_back);
 
-       //document.getElementById("back" + id).setAttribute("value", obj.cards[0].cardtext_back);
-       document.getElementById("back" + id).setAttribute("value", obj.cards[0].cardtext_back);
+       //document.getElementById("back" + card_id).setAttribute("value", obj.cards[0].cardtext_back);
+       document.getElementById("back" + card_id).setAttribute("value", obj.cards[0].cardtext_back);
 
 
        /*
@@ -231,7 +231,7 @@ function add() {
      }
    };
    xhttp.open("POST", "/cardBacks", true);
-   xhttp.send(`i=${id}`);
+   xhttp.send(`i=${card_id}`);
  }
 
  function hide(id){

@@ -28,9 +28,9 @@ function getCards(request, response) {
 
 function getCardBack(request, response) {
     const userid = 2;
-    const cardtext_front = request.body.i;
-    console.log("userid= ", userid, "cardtet", cardtext_front);
-    model.getCardBack(userid, function(err, cards) {
+    const cardid = request.body.i;
+    console.log("userid= ", userid, "cardid", cardid);
+    model.getCardBack(userid, cardid, function(err, cards) {
         if (err) {
             const data = {
                 success: false,
