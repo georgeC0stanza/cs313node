@@ -36,7 +36,7 @@ app.post('/login',  controller.login);
 app.post('/logout', controller.logout);
 
 app.post("/cards", controller.getCards);
-app.post("/cardsBacks", controller.getCardBack);
+app.post("/cardBacks", controller.getCardBack);
 app.post("/add_card", controller.createCard);
 
 app.get("/", handleRoot);
