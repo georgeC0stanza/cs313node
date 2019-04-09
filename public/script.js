@@ -125,7 +125,6 @@ const userID = 2;
 
 
  function getAllCards(){
-  var searchURL = "/cards" + `&id=${userID}`;
    var xhttp = new XMLHttpRequest();
    xhttp.onreadystatechange = function() {
      if (this.readyState == 4 && this.status == 200) {
@@ -145,8 +144,8 @@ const userID = 2;
        });
      }
    };
-   xhttp.open("POST", searchURL, true);
-   xhttp.send();
+   xhttp.open("POST","/cards", true);
+   xhttp.send(`&id=${userID}`);
  
  }
 
