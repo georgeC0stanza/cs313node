@@ -129,6 +129,7 @@ function getAllCards(){
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       var obj = JSON.parse(this.responseText);
+      console.log(this.responseText);
       var cards = document.getElementById("cardlist");
       obj['cards'].forEach(function (card) {
         var button = document.createElement("INPUT");
