@@ -138,11 +138,13 @@ function getAllCards(){
         button.setAttribute("type", "button");
         button.setAttribute("onclick", `viewDetails('${card['id']}')`);
         button.setAttribute("value", `${card['cardtext_front']}`);
+        button.setAttribute("class", "button");
         cards.appendChild(button);
 
         span.setAttribute("type", "button");
         span.setAttribute("id", "back" + card['id']);
         span.setAttribute("onclick", `hide('back' + '${card['id']}')`);
+        span.setAttribute("class", "button");
         cards.appendChild(span);
         cards.appendChild(document.createElement("br"));
         cards.appendChild(document.createElement("br"));
