@@ -124,32 +124,31 @@ const baseURL = "/cards";
 const userID = 2;
 
 
- function getAllCards(){
-   var xhttp = new XMLHttpRequest();
-   xhttp.onreadystatechange = function() {
-     if (this.readyState == 4 && this.status == 200) {
-       var obj = JSON.parse(this.responseText);
-       var cards = document.getElementById("cardlist");
-       obj['cards'].forEach(function (card) {
-         var button = document.createElement("BUTTON");
-         var span = document.createElement("SPAN");
+function getAllCards(){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var obj = JSON.parse(this.responseText);
+      var cards = document.getElementById("cardlist");
+      obj['cards'].forEach(function (card) {
+        var button = document.createElement("BUTTON");
+        var span = document.createElement("SPAN");
 
-         button.setAttribute("onclick", `viewDetails('${card['id']}')`);
-         button.setAttribute("value", `${card['cardtext_front']}`);
-         
-         cards.appendChild(button);
+        button.setAttribute("onclick", `viewDetails('${card['id']}')`);
+        button.setAttribute("value", `${card['cardtext_front']}`);
+        
+        cards.appendChild(button);
 
-         span.setAttribute("class", card[id]);
-         cards.appendChild(span);
-       });
-     }
-   };
-   xhttp.open("POST","/cards", true);
-   xhttp.send(`&id=${userID}`);
+        span.setAttribute("class", card[id]);
+        cards.appendChild(span);
+      });
+    }
+  };
+  xhttp.open("POST","/cards", true);
+  xhttp.send(`&id=${userID}`);
+}
  
- }
-
- function add() {
+function add() {
   var cardtext_front = document.getElementById('cardtext_front').value;
   var cardtext_back = document.getElementById('cardtext_back').value;
 
@@ -176,12 +175,14 @@ const userID = 2;
       xhttp.open("POST", "/cards", true);
       xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       xhttp.send( 'id=2');
-    }*/
-    getAllCards();
+      */
+      getAllCards();
+    }
   };
   xhttp.open("POST", "/add_card", true);
   xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhttp.send( `&cardtext_front=${cardtext_front}` + `&cardtext_back=${cardtext_back}`);
+
 }
  
  function viewDetails(id) {
