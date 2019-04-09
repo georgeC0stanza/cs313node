@@ -131,9 +131,10 @@ function getAllCards(){
       var obj = JSON.parse(this.responseText);
       var cards = document.getElementById("cardlist");
       obj['cards'].forEach(function (card) {
-        var button = document.createElement("BUTTON");
+        var button = document.createElement("INPUT");
         var span = document.createElement("SPAN");
 
+        button.setAttribute("type", "button");
         button.setAttribute("onclick", `viewDetails('${card['id']}')`);
         button.setAttribute("value", `${card['cardtext_front']}`);
         
