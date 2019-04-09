@@ -210,6 +210,6 @@ const userID = 2;
        });*/
      }
    };
-   xhttp.open("GET", searchURL, true);
+   xhttp.open("POST", searchURL, true);
    xhttp.send();
  }
